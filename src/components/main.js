@@ -6,7 +6,7 @@ class Main extends React.Component {
     render() {
         return (
             honrsData.map((item, index)=>{
-                console.log(index);
+                
                 return(
                     <HornedBeasts 
                     key={index}
