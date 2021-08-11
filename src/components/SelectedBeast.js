@@ -4,6 +4,21 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 class SelectedBeast extends react.Component{
+  //   constructor(props){
+  //     super(props)
+      
+  // this.state={
+  //   show1:false
+  // }}
+
+  // this.setState({
+  //   show1:this.props.show
+  // })
+
+  
+
+
+  
 render(){
 
     return ( 
@@ -11,18 +26,20 @@ render(){
       <Button variant="primary" onClick={this.props.handleShow}>
         Launch demo modal
       </Button>
-
-      <Modal show={Boolean(this.props.show)} onHide={this.props.handleShow}>
+      {console.log(this.props.whichBeast)}
+      <Modal show={this.props.show} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>{this.props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          
+
         <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={this.props.whichBeast.imgUrl} />
+                  <Card.Img variant="top" src={this.props.url} />
                   <Card.Body>
-                      <Card.Title>{this.props.whichBeast.title}</Card.Title>
+                      <Card.Title></Card.Title>
                       <Card.Text>
-                      {this.props.whichBeast.description}
+                      {this.props.description}
                       
                       </Card.Text>
                       
@@ -42,8 +59,8 @@ render(){
     </>
     )
 }
-
 }
+
 
 
   

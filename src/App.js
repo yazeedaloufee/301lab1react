@@ -11,14 +11,22 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      show: 'false'
+      show: false,
+      title : {},
+      url:"",
+      description:''
     }
-    this.whichBeast = {}
+    // this.whichBeast = {}
 
    
   }
- whichBeastIsSelected = (title) => {
-      this.whichbeast = Data.find(beast =>beast.title === title 
+ whichBeastIsSelected =  (title,url,description) => {
+   this.setState({
+     title :title,
+     url:url,
+     description:description
+
+
       //   {
 
       //   if (beast.title === title) {
@@ -26,20 +34,22 @@ class App extends React.Component {
       //     return beast;
       //   }
       // }
-      )
-      // console.log("new log",this.whichbeast);
+   
+      
+      } )
+      console.log("new log",this.state.whichbeast);
     }
 
     handleClose = () => {
-      this.setState({
-        show: 'false'
+       this.setState({
+        show: false
       })
       console.log(this.state.show);
     }
 
     handleShow = () => {
-      this.setState({
-        show: 'true'
+       this.setState({
+        show: true
       })
       console.log(this.state.show);
     }
@@ -50,7 +60,7 @@ class App extends React.Component {
         <>
           <Header />
           <Main whichBeastIsSelected={this.whichBeastIsSelected} handleShow={this.handleShow} />
-          <SelectedBeast show={this.state.show} handleShow={this.handleShow} handleClose={this.handleClose} whichBeast={this.whichBeast} />
+          <SelectedBeast show={this.state.show} handleShow={this.handleShow} handleClose={this.handleClose} title={this.state.title} url={this.state.url} description={this.state.description}/>
           <Footer />
 
         </>)

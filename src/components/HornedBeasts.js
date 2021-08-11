@@ -19,7 +19,7 @@ class HornedBeasts extends React.Component {
 
     renderHandle=()=>{
         this.props.handleShow();
-        this.props.whichBeastIsSelected(this.props.title);
+        this.props.whichBeastIsSelected(this.props.title,this.props.imgUrl,this.props.description);
         // console.log( this.props.whichBeastIsSelected(this.props.title));
         
     }
