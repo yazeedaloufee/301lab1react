@@ -4,7 +4,7 @@ import Main from "./components/main"
 import Header from './components/header'
 import Footer from './components/footer'
 import SelectedBeast from './components/SelectedBeast'
-import Data from './components/hornsData.json'
+
 
 
 class App extends React.Component {
