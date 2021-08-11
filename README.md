@@ -68,10 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
+### lab 2
+creating cards 
+started and finished within lab time.
+started at 3 and finished at 5.
+it took me roughly 2 hours
+### lab 3
 adding model
 i started at 1 pm and still didnot finish no its 8 am next day
 
 estimated time 3 hours.
 actual time 17 hours. 
+### lab4
+adding a filter 
+estimated time 3 hours
+actual time from 3:15 to 5pm
+1:45 hours.

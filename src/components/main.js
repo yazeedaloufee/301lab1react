@@ -19,9 +19,9 @@ class Main extends React.Component {
         event.preventDefault();
         let whatever = honrsData.filter(function (n, i) {
           
-            return (n.horns == event.target.value);
+            return (n.horns === event.target.value);
         })
-        if (event.target.value == '0') { whatever= honrsData }
+        if (event.target.value === '0') { whatever= honrsData }
         this.setState({
             filter: event.target.value,
             arrayofelm: whatever
