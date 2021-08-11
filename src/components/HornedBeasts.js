@@ -17,10 +17,19 @@ class HornedBeasts extends React.Component {
 
     }
 
+    renderHandle=()=>{
+        this.props.handleShow();
+        this.props.whichBeastIsSelected(this.props.title,this.props.imgUrl,this.props.description);
+        // console.log( this.props.whichBeastIsSelected(this.props.title));
+        
+    }
+
+
+
 
 
     render() {
-        console.log(this.props.imageUrl);
+        
         return (
             <>
                 {/* <h2>{this.props.title}</h2>
@@ -28,13 +37,13 @@ class HornedBeasts extends React.Component {
                 <p>{this.props.description}</p>
                 <p>favorite by {this.state.counter}</p> */}
 
-                <Card style={{ width: '18rem' }}>
+                <Card onClick={this.renderHandle}  style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={this.props.imgUrl} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
                         {this.props.description}
-                        <p>favoutie by {this.state.counter} people</p>
+                        favoutie by {this.state.counter} people
                         </Card.Text>
                         <Button onClick={this.increaseCounter}variant="primary">vote a favorite</Button>
                     </Card.Body>
