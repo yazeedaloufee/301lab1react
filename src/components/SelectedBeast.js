@@ -23,9 +23,7 @@ render(){
 
     return ( 
       <>
-      <Button variant="primary" onClick={this.props.handleShow}>
-        Launch demo modal
-      </Button>
+      
       {console.log(this.props.whichBeast)}
       <Modal show={this.props.show} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
