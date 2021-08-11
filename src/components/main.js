@@ -1,14 +1,52 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import honrsData from './hornsData.json'
 import Row from 'react-bootstrap/Row'
-
+import Form from 'react-bootstrap/Form'
 
 import HornedBeasts from './HornedBeasts';
 class Main extends React.Component {
+    constructor(props){
+        super(props)
+       
+        this.state={
+            filter:'0',
+            newarray:[],
+            arrayofelm: honrsData      }
+    }
+
+    filterControler=(event)=>{
+        event.preventDefault();
+        let whatever = honrsData.filter(function (n, i) {
+          
+            return (n.horns == event.target.value);
+        })
+        if (event.target.value == '0') { whatever= honrsData }
+        this.setState({
+            filter: event.target.value,
+            arrayofelm: whatever
+        })
+
+
+
+
+    }
+
     render() {
-        return (<Row  xs={1} sm={2} md={3} lg={4} className="g-4">{
+        console.log(this.state.arrayofelm);
+        return ( <>
+        <Form.Select aria-label="Default select example" onChange={this.filterControler} name='selection'>
+        <option value="0">Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="100">hornes more than legs</option>
+    </Form.Select>
+
+        <Row  xs={1} sm={2} md={3} lg={4} className="g-4">{
+          
             
-            honrsData.map((item, index)=>{
+            this.state.arrayofelm.map((item, index)=>{
                 
                 return(
                    
@@ -36,7 +74,8 @@ class Main extends React.Component {
 
             //     <HornedBeasts title='Rhino Family' imageUrl="https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80" description='Mother (or father) rhino with two babies' />
             // </>
-        }</Row> )
+        }</Row> 
+        </>)
          }
     }
 
