@@ -18,9 +18,10 @@ class Main extends React.Component {
     filterControler=(event)=>{
         event.preventDefault();
         let whatever = honrsData.filter(function (n, i) {
-          
-            return (n.horns === event.target.value);
+          console.log(typeof(n.horns));
+            return (n.horns === Number(event.target.value));
         })
+        
         if (event.target.value === '0') { whatever= honrsData }
         this.setState({
             filter: event.target.value,
@@ -36,7 +37,7 @@ class Main extends React.Component {
         console.log(this.state.arrayofelm);
         return ( <>
         <Form.Select aria-label="Default select example" onChange={this.filterControler} name='selection'>
-        <option value="0">Open this select menu</option>
+        <option value="0">use filter</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
